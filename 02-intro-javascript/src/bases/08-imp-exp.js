@@ -1,7 +1,8 @@
 //import, export y funciones comunes de arreglos
 // en la importacion por defecto o hace falta utilizar llaves
-import  heroes, {owners}  from './data/heroes';
-console.log( owners );
+//import  heroes, {owners}  from '../data/heroes';
+import  heroes from '../data/heroes';
+//console.log( owners );
 // este codigo es demasiado largo para lo que se pidio asi que se simplificara
 // const getHeroeById = (id) => {
 //     return heroes.find( ( heroe ) => {
@@ -14,11 +15,11 @@ console.log( owners );
 // }
 
 
+// se puede exporttar esa funcion flecha solo agregando el export al inicio
+export const getHeroeById = (id) => heroes.find( ( heroe ) => heroe.id === id);
 
-const getHeroeById = (id) => heroes.find( ( heroe ) => heroe.id === id);
+//console.log( getHeroeById(5));
 
-console.log( getHeroeById(5));
+export const getHeroesByOwner = ( owner ) => heroes.filter( ( heroe ) => heroe.owner === owner);
 
-const getHeroesByOwner = ( owner ) => heroes.filter( ( heroe ) => heroe.owner === owner);
-
-console.log( getHeroesByOwner('DC'));
+//console.log( getHeroesByOwner('DC'));
