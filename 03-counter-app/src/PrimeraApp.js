@@ -1,8 +1,11 @@
 // FC
 import React from 'react';
 
-const PrimeraApp = () =>{
-    const saludo = 'Hola Mundo'
+const PrimeraApp = ( {saludo = 'Hola mundo'} ) => {
+
+    //const saludo = 'Hola Mundo';
+
+    //console.log( props );
     return (
         //se elimino el Fragment        
         <>
