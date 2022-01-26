@@ -9,4 +9,4 @@ import './index.css'
 
 const divRoot = document.querySelector('#app');
 
-reactDOM.render( <PrimeraApp  /> , divRoot );
+reactDOM.render( <PrimeraApp saludo="holi" /> , divRoot );
