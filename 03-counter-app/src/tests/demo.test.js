@@ -8,7 +8,7 @@
 
 // } )
 
-describe(' Pruebas en el archivo demo.test.js', => {
+describe(' Pruebas en el archivo demo.test.js', () => {
 
     test('deben de ser iguales los strings', () => {
     // 1. inicializacion
