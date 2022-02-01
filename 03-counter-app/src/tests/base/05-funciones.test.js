@@ -11,7 +11,7 @@ describe(' Pruebas en funciones', () => {
 
       const user = getUser();
 
-      console.log( user );
+      //console.log( user );
 
       expect( user ).toEqual( userTest );
     });
