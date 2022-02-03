@@ -4,18 +4,13 @@ import PropTypes from 'prop-types';
 
 const PrimeraApp = ( { saludo, subtitulo } ) => {
 
-    //const saludo = 'Hola Mundo';
-    // if ( !saludo){
-    //     throw new Error( 'El saludo es necesario' );
-    // }
-
     //console.log( props );
     return (
         //se elimino el Fragment        
         <>
-            <h1> { saludo } </h1>
+            <h1>{ saludo }</h1>
             {/* <pre> { JSON.stringify( saludo, null, 3 ) } </pre> */}
-            <p> {subtitulo} </p>
+            <p>{subtitulo}</p>
         </>        
     );
     
@@ -26,7 +21,7 @@ PrimeraApp.propTypes = {
 }
 
 PrimeraApp.defaultProps = {
-    subtitulo: 'soy un subtitulo'
+    subtitulo: 'Soy un subtitulo'
 }
 
 export default PrimeraApp;

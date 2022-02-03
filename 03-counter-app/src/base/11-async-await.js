@@ -3,30 +3,26 @@
 // const getImagenPromesa = () => new Promise( resolve => resolve('https://ajskdhaskjdhajs.com') )
 // getImagenPromesa().then( console.log );
 
-const getImagen = async() => {
+export const getImagen = async() => {
 
     try {
 
-        const apiKey = 'C1khQe3Z7R1W2lfTO9myKeuShdqFYSGC';
-        const resp   = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
+        const apiKey = '7o4oshT61TLIaGK7U8x8XLXu7djzW2kF';
+        const resp = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
         const { data } = await resp.json(); 
 
         const { url } = data.images.original;
 
-        const img = document.createElement('img');
-        img.src = url;
-        document.body.append( img );
+        return url;
 
     } catch (error) {
         // manejo del error
-        console.error(error)
+        return 'no existe';
     }
-    
-    
     
 }
 
- getImagen();
+
 
 
 
