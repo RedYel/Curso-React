@@ -14,7 +14,7 @@ export const AddCategory = ( { setCategories } ) => {
 
         if ( inputValue.trim().length > 2){
             //console.log( 'Submit Hecho' );
-            setCategories( cats => [...cats, inputValue ]);
+            setCategories( cats => [ inputValue,...cats ]);
             setinputValue('');
         }
         
