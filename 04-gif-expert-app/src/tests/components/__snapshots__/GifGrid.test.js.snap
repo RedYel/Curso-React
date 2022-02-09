@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el GifGrid Debe de hacer match con el snapshot 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__flash"
+  >
+    batman
+  </h3>
+  <p
+    className="animate__animated animate__flash"
+  >
+    Loading
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
+
+exports[`Pruebas en el GifGrid Debe mostrar items cuando se cargan imagenes useFetchGifs 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__flash"
+  >
+    batman
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="ABC"
+      key="ABC"
+      title="batman loco"
+      url="https://localhost.algo"
+    />
+    <GifGridItem
+      id="Asdg"
+      key="Asdg"
+      title="batman sad"
+      url="https://localhost.algo"
+    />
+  </div>
+</Fragment>
+`;
