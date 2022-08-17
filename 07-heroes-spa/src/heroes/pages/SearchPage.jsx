@@ -3,6 +3,7 @@ import queryString from "query-string";
 
 import { useForm } from "../../hooks/useForm";
 import { HeroCard } from "../components";
+import { getHeroesByName } from "../helpers";
 
 export const Search = () => {
   const navigate = useNavigate();
@@ -11,8 +12,10 @@ export const Search = () => {
 
   const { q = "" } = queryString.parse(location.search);
 
+  const heroes = getHeroesByName(q);
+
   const { searchText, onInputChange } = useForm({
-    searchText: "",
+    searchText: q,
   });
 
   const onSearchSubmit = (event) => {
@@ -51,11 +54,14 @@ export const Search = () => {
           <hr />
 
           <div className="alert alert-primary">Search a hero</div>
+
           <div className="alert alert-danger">
             There's not results for <b>{q}</b>
           </div>
 
-          {/* <HeroCard /> */}
+          {heroes.map((hero) => (
+            <HeroCard key={hero.id} {...hero} />
+          ))}
         </div>
       </div>
     </>
