@@ -14,15 +14,18 @@ export const Search = () => {
 
   const heroes = getHeroesByName(q);
 
+  const showSearch = q.length === 0;
+  const showError = q.length > 0 && heroes.length === 0;
+
   const { searchText, onInputChange } = useForm({
     searchText: q,
   });
 
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    if (searchText.trim().length <= 1) return;
+    // if (searchText.trim().length <= 1) return;
 
-    console.log({ searchText });
+    // console.log({ searchText });
     //* Hacer la navegacion al qry parameter
     navigate(`?q=${searchText}`);
   };
@@ -53,14 +56,36 @@ export const Search = () => {
           <h4>Results</h4>
           <hr />
 
-          <div className="alert alert-primary">Search a hero</div>
+          {/* {q === "" ? (
+            <div className="alert alert-primary">Search a hero</div>
+          ) : (
+            heroes.length === 0 && (
+              <div className="alert alert-danger">
+                There's not results for <b>{q}</b>
+              </div>
+            )
+          )} */}
 
-          <div className="alert alert-danger">
+          <div
+            className="alert alert-primary animate__animated animate__fadeIn"
+            style={{ display: showSearch ? "" : "none" }}
+          >
+            Search a hero
+          </div>
+
+          <div
+            className="alert alert-danger animate__animated animate__fadeIn"
+            style={{ display: showError ? "" : "none" }}
+          >
             There's not results for <b>{q}</b>
           </div>
 
           {heroes.map((hero) => (
-            <HeroCard key={hero.id} {...hero} />
+            <HeroCard
+              key={hero.id}
+              {...hero}
+              // className="animate__animated animate__fadeIn"
+            />
           ))}
         </div>
       </div>
